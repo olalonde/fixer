@@ -1,0 +1,38 @@
+{
+  "name": "fixer",
+  "version": "0.0.1",
+  "description": "Setup your test database using fixtures in a breeze.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node example/load_fixtures"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:olalonde/fixer.git"
+  },
+  "keywords": [
+    "fixture",
+    "fixtures",
+    "mock",
+    "mocks",
+    "sequelize",
+    "orm",
+    "test",
+    "database"
+  ],
+  "author": "Olivier Lalonde <olalonde@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olalonde/fixer/issues"
+  },
+  "dependencies": {
+    "underscore": "~1.4.4",
+    "async": "git://github.com/olalonde/async.git",
+    "underscore.string": "~2.3.1"
+  },
+  "devDependencies": {
+    "sequelize": "~1.7.0-alpha2",
+    "pg": "~1.1.2",
+    "coffee-script": "~1.6.2"
+  }
+}
