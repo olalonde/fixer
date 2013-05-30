@@ -1,7 +1,12 @@
 # Fixer
 
 Node.js module to setup your test database using fixtures in a breeze. 
-Inspired by [Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures). Only supports `sequelize` ORM at the moment.
+Inspired by [Rails fixtures](http://guides.rubyonrails.org/testing.html#the-low-down-on-fixtures). 
+
+## Limitations
+
+- Only supports `sequelize` ORM at the moment.
+- I haven't tested many-to-many relationships for now but I will as soon as possible.
 
 ## Install
 
