@@ -46,7 +46,6 @@ module.exports =
     first_name: 'Mark'
     last_name: 'Zuckerberg'
     email: 'mark@facebook.com'
-    #password
     school: 'Harvard'
 ```
 
