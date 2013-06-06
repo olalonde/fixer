@@ -1,6 +1,6 @@
 {
   "name": "fixer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Setup your test database using fixtures in a breeze.",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,8 @@
   "dependencies": {
     "underscore": "~1.4.4",
     "async": "git://github.com/olalonde/async.git",
-    "underscore.string": "~2.3.1"
+    "underscore.string": "~2.3.1",
+    "debug": "~0.7.2"
   },
   "devDependencies": {
     "sequelize": "~1.7.0-alpha2",

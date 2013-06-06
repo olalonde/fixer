@@ -1,4 +1,5 @@
 var async = require('async'),
+  debug = require('debug')('fixer'),
   util = require('util'),
   EventEmitter = require('events').EventEmitter,
   _ = require('underscore'),
@@ -119,14 +120,16 @@ Fixer.prototype.saveAssociations = function (model_name, fixture_id, fixture, cb
 
   var local_instance = this.getInstance(model_name, fixture_id);
 
+  debug('Saving associations for ' + model_name + '#' + fixture_id);
+
   async.each(this.getAssociations(Model, fixture), function (assoc, cb) {
     var local = assoc.local;
     var foreign = assoc.foreign;
 
-    console.log(local.setter);
-    console.log(foreign.model_name);
-    console.log(foreign.fixture_id);
-    console.log(foreign.fixture);
+    debug(local.setter);
+    debug(foreign.model_name);
+    debug(foreign.fixture_id);
+    debug(foreign.fixture);
 
     var foreign_instance = _this.getInstance(foreign.model_name, foreign.fixture_id);
 
@@ -148,7 +151,9 @@ Fixer.prototype.saveAssociations = function (model_name, fixture_id, fixture, cb
  */
 module.exports = function (model_fixtures, models) {
   return new Fixer(model_fixtures, models); 
-  //fix.on('create', function (model_name, object_id, instance) {
-    //console.log('created ' + object_id);
-  //});
 };
+
+//@TODO: events
+//fix.on('create', function (model_name, object_id, instance) {
+  //console.log('created ' + object_id);
+//});
