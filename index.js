@@ -100,8 +100,17 @@ Fixer.prototype.create = function (model_name, fixture_id, fixture, cb) {
 
   var Model = this.getModel(model_name),
     _this = this;
+  
+  var inst = Model.build(fixture);
+  
+  if (fixture.createdAt){
+    inst.dataValues['createdAt'] = fixture.createdAt;
+  }
+  if (fixture.updatedAt){
+    inst.dataValues['updatedAt'] = fixture.updatedAt;
+  }
 
-  Model.create(fixture)
+  inst.save()
     .success(function (instance) {
       _this.instances[model_name][fixture_id] = instance;
       _this.emit('create', model_name, fixture_id, instance);
